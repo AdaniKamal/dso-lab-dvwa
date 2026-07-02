@@ -2,12 +2,14 @@ name: DevSecOps Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
 
 jobs:
 
-  hello-world:
+  lint:
+
+    name: Super-Linter
 
     runs-on: ubuntu-latest
 
@@ -16,11 +18,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Print Environment
-        run: |
-          echo "Hello DevSecOps!"
-          echo "Running on:"
-          uname -a
-
-      - name: Show Files
-        run: ls -lah
+      - name: Run Super-Linter
+        uses: super-linter/super-linter@v8
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
