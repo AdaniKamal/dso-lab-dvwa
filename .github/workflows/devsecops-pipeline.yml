@@ -1,0 +1,26 @@
+name: DevSecOps Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  hello-world:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Print Environment
+        run: |
+          echo "Hello DevSecOps!"
+          echo "Running on:"
+          uname -a
+
+      - name: Show Files
+        run: ls -lah
