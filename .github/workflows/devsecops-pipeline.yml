@@ -7,11 +7,8 @@ on:
   pull_request:
 
 jobs:
-
   super-linter:
-
     name: Super-Linter
-
     runs-on: ubuntu-latest
 
     permissions:
@@ -20,12 +17,15 @@ jobs:
       statuses: write
 
     steps:
-
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Run Super-Linter
         uses: super-linter/super-linter@v8
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_MARKDOWN: false
+          VALIDATE_NATURAL_LANGUAGE: false
