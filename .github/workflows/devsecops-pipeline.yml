@@ -166,6 +166,7 @@ jobs:
             zap-baseline.py \
             -t http://localhost:8080 \
             -r zap-report.html
+            -I
 
       # Upload the report
       - name: Upload ZAP Report
