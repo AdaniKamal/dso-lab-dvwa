@@ -70,7 +70,7 @@ jobs:
       - name: Run Semgrep
         run: semgrep scan --config auto --error
 
-    trivy-fs:
+  trivy-fs:
     name: Trivy Filesystem Scan
 
     runs-on: ubuntu-latest
