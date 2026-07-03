@@ -96,7 +96,7 @@ jobs:
           exit-code: "0"
           severity: CRITICAL,HIGH
 
-    trivy-image:
+  trivy-image:
     name: Trivy Docker Image Scan
 
     runs-on: ubuntu-latest
