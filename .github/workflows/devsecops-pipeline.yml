@@ -151,12 +151,17 @@ jobs:
           echo "DVWA failed to start."
           exit 1
 
+      - name: Prepare ZAP Report Directory
+        run: |
+          mkdir -p zap-output
+          chmod 777 zap-output
+
       # Add zap-baseline.py = Passive scan (safe, no attacks)
       - name: Run OWASP ZAP Baseline Scan
         run: |
           docker run --rm \
             --network host \
-            -v $(pwd):/zap/wrk:rw \
+            -v $(pwd)/zap-output:/zap/wrk:rw \
             ghcr.io/zaproxy/zaproxy:stable \
             zap-baseline.py \
             -t http://localhost:8080 \
