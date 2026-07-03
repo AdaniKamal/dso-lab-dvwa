@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run Super-Linter
-        uses: super-linter/super-linter@c05768164eed53bac7c82aade7a14a76955206d4962cd41be97118db96fa5996
+        uses: super-linter/super-linter@729e0f967409dceb0a898cdd94a5534719f85c36
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,7 +46,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run Gitleaks
-        uses: gitleaks/gitleaks-action@9a7437ba3baa2c38b53eae62ac524250574c9e71f4ced0148542d65f823aeaef
+        uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
