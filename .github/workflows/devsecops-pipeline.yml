@@ -114,7 +114,7 @@ jobs:
         run: docker pull vulnerables/web-dvwa:latest
 
       - name: Scan Docker Image
-        uses: aquasecurity/trivy-action@YOUR_PINNED_SHA
+        uses: aquasecurity/trivy-action@57a97c7e7821a5776cebc9bb87c984fa69cba8f1
         with:
           image-ref: vulnerables/web-dvwa:latest
           format: table
