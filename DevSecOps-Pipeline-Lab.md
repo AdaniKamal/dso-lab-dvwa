@@ -1,4 +1,4 @@
-# DevSecOps Learning Journal
+# DevSecOps Pipeline Lab
 
 ---
 
